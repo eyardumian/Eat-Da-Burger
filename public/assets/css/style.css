@@ -1,0 +1,20 @@
+body {
+  background-image: url(https://image.freepik.com/free-vector/hamburger-pattern-background_1344-44.jpg);
+}
+.container
+{
+  background-color: #FF4500;
+}
+
+
+h1 {
+  text-align: center;
+}
+
+#create {
+  text-align: center;
+}
+
+img {
+  padding-bottom: 30px;
+}
