@@ -10,7 +10,7 @@ var app = express();
 //app.use(express.static(process.cwd() + '/public'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-var port = 3000;
+var port = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.engine("handlebars", exphbs({ defaultLayout: "main"}));
@@ -57,19 +57,8 @@ app.post("/", function(req, res) {
   });
 });
 
-// app.get("/:id", function(req, res) {
-//   connection.query("SELECT * FROM orders where id = ?", [req.params.id], function(err, data) {
-//     if (err) {
-//       throw err;
-//     }
-//
-//     console.log(data);
-//     res.render("index", {orders: data});
-//   });
-// });
-
 app.put("/:id", function(req, res) {
-  connection.query("UPDATE orders SET devoured = 1 WHERE id = ?", [
+  connection.query("UPDATE orders SET devoured = true WHERE id = ?", [
     req.body.devoured, req.params.id
   ], function(err, result) {
     if (err) {
