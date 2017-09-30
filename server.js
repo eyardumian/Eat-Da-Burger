@@ -58,13 +58,13 @@ app.post("/", function(req, res) {
 });
 
 app.put("/:id", function(req, res) {
-  connection.query("UPDATE orders SET devoured = true WHERE id = ?", [
+  connection.query("UPDATE orders SET devoured = true WHERE id = (?)", [
     req.body.devoured, req.params.id
   ], function(err, result) {
     if (err) {
       throw err;
     }
-    console.log("updated");
+
     res.redirect("/");
   });
 });

@@ -21,7 +21,7 @@
               {{#unless this.devoured}}
 					       <li class="devour">
                   {{this.hamburgerorder}}
-      					  <form action='/{{this.id}}?_method=PUT' method='post'>
+      					  <form action='/{{this.id}}?_method=PUT' method='POST'>
       							<input type='hidden' name='devoured' value='true'>
                     <button type='submit'>Devour me!</button>
       						</form>
