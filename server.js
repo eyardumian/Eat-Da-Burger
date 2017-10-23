@@ -28,7 +28,7 @@ var connection = mysql.createConnection({
   user: "root",
   password: "Insecure",
   database: "burger_db",
-  port: 8889
+  //port: 8889
 });
 
 if(process.env.JAWSDB_URL) {
