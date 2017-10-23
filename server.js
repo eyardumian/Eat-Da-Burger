@@ -31,6 +31,17 @@ var connection = mysql.createConnection({
   port: 8889
 });
 
+if(process.env.JawsDB_URL) {
+  connection = mysql.createConnection(process.envJawsDB_URL);
+} else{
+  connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'Insecure',
+    database: 'burger_db'
+  });
+};
+
 connection.connect(function(err) {
   if (err) {
     console.log("error connection" + err.stack);
