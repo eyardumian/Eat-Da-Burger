@@ -23,13 +23,6 @@ app.use(methodOverride('_method'));
 
 
 
-var connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "Insecure",
-  database: "burger_db",
-  //port: 8889
-});
 
 if(process.env.JAWSDB_URL) {
   connection = mysql.createConnection(process.envJAWSDB_URL);
