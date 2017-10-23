@@ -31,8 +31,8 @@ var connection = mysql.createConnection({
   port: 8889
 });
 
-if(process.env.JawsDB_URL) {
-  connection = mysql.createConnection(process.envJawsDB_URL);
+if(process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.envJAWSDB_URL);
 } else{
   connection = mysql.createConnection({
     host: 'localhost',
