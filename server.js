@@ -10,7 +10,7 @@ var app = express();
 //app.use(express.static(process.cwd() + '/public'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-//var port = process.env.PORT || 3000;
+var port = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.engine("handlebars", exphbs({ defaultLayout: "main"}));
