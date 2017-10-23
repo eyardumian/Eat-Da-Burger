@@ -4,6 +4,7 @@ var mysql = require("mysql");
 var exphbs = require("express-handlebars");
 var methodOverride = require('method-override');
 var path = require("path");
+var connection;
 
 
 var app = express();
@@ -35,13 +36,15 @@ if(process.env.JAWSDB_URL) {
   });
 };
 
-connection.connect(function(err) {
-  if (err) {
-    console.log("error connection" + err.stack);
-    return;
-  }
-  console.log("connected as id" + connection.threadId);
-});
+connection.connect();
+module.exports = connection;
+// connection.connect(function(err) {
+//   if (err) {
+//     console.log("error connection" + err.stack);
+//     return;
+//   }
+//   console.log("connected as id" + connection.threadId);
+// });
 
 app.get("/", function(req, res) {
       connection.query("SELECT * FROM orders;", function(err, data) {
