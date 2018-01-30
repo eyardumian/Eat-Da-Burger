@@ -8,22 +8,14 @@ var connection;
 
 
 var app = express();
-//app.use(express.static(process.cwd() + '/public'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-//var port = process.env.PORT || 3000;
+var port = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.engine("handlebars", exphbs({ defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 app.use(methodOverride('_method'));
-
-// app.use(express.static('public'));
-// app.use(express.static('files'))
-
-
-
-
 
 if(process.env.JAWSDB_URL) {
   connection = mysql.createConnection(process.envJAWSDB_URL);
@@ -31,6 +23,7 @@ if(process.env.JAWSDB_URL) {
   connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
+    port: '8889',
     password: 'Insecure',
     database: 'burger_db'
   });
@@ -38,13 +31,6 @@ if(process.env.JAWSDB_URL) {
 
 connection.connect();
 module.exports = connection;
-// connection.connect(function(err) {
-//   if (err) {
-//     console.log("error connection" + err.stack);
-//     return;
-//   }
-//   console.log("connected as id" + connection.threadId);
-// });
 
 app.get("/", function(req, res) {
       connection.query("SELECT * FROM orders;", function(err, data) {

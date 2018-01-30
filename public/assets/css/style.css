@@ -1,24 +1,69 @@
-body {
+/* body {
   background-image: url(https://image.freepik.com/free-vector/hamburger-pattern-background_1344-44.jpg);
-}
-.container
+} */
+body
 {
-  background-color: #FF4500;
+  /* background-color: #FF4500; */
+  background-size: cover;
+  background-image: url("/assets/images/ham.wood.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
 }
 
-
-h1 {
+ #title{
+  color: #ffffff;
+  font-weight: bold;
+  font-family: fantasy;
+  font-size: 70px;
   text-align: center;
+}
+
+#burgers{
+  /* color: #ffffff; */
+  font-family: fantasy;
+  font-size: 20px;
+  float: right;
+  font-weight: bold;
 }
 
 #create {
   text-align: center;
+  /* font-weight: bold; */
+  padding-bottom: 45px;
+  font-size: 20px;
+  font-family: fantasy;
 }
 
-img {
-  padding-bottom: 30px;
+.create{
+  font-weight: 900;
+  font-size: 35px;
+  text-decoration: underline;
 }
 
+.transbox{
+  margin: 0;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity: 0.5;
+  margin-right: 30px;
+  margin-top: 20px;
+}
+
+.transbox ul{
+  font-weight: bold;
+  color: #000000;
+}
 .devour {
   padding-top: 15px;
+}
+
+#button{
+  color: black;
+}
+
+@media screen and (max-width: 1200px) {
+  .transbox{
+    opacity: .7;
+  }
 }
